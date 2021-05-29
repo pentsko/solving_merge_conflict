@@ -42,8 +42,8 @@ class Dictionary
     end
 
     def testing_entering_translation
-      enter = gets.chomp
-      if enter == "1"
+      enter_chose_item = gets.chomp
+      if enter_chose_item == "1"
         hash = []
         File.open("First.txt", "r+") do |file|
           hash = file.readlines
@@ -51,7 +51,7 @@ class Dictionary
         hash.find_all do |el|
           first, *last = el.split(/ - /)
           puts last
-          puts "#{@name} введіть переклад: "
+          puts "#{@name} enter translation: "
           user_word = gets.upcase.chomp
 
           if user_word.upcase == first.upcase
