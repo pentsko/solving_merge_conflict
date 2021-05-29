@@ -1,8 +1,8 @@
-require 'timers'
+# require 'timers'
 
 class Dictionary
   attr_accessor :name
-  puts "Введіть ваше ім'я: "
+  puts "Введіть Ваше ім'я: "
 
   def initialize(name)
     name = gets.chomp!
@@ -12,12 +12,13 @@ class Dictionary
   def say_hello
     puts "Привіт #{@name}, приступим..."
 
-    timers = Timers::Group.new
-    Timers::Group #after:
-    one_second_timer = timers.after(1) {
+    # timers = Timers::Group.new
+    # Timers::Group #after:
+    # one_second_timer = timers.after(1) {
       puts "#{@name} для того щоб вибрати First введіть '1'"
-      puts "#{@name} для того щоб вибрати Second введіть '2'" }
-    timers.wait
+      puts "#{@name} для того щоб вибрати Second введіть '2'"
+    # }
+    # timers.wait
 
     def chose_item
       user_chose_item = gets.chomp
