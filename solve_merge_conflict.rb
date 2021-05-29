@@ -55,7 +55,7 @@ class Dictionary
           user_word = gets.upcase.chomp
 
           if user_word.upcase == first.upcase
-            puts "Правильно з першої спроби "
+            puts "Wonderfull of first try "
 
           else
             while user_word.upcase != first.upcase do
