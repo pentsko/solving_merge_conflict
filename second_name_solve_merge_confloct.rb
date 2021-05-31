@@ -2,7 +2,7 @@
 
 class Dictionary
   attr_accessor :name
-  puts "Введіть Ваше ім'я: "
+  puts "Enter your name: "
 
   def initialize(name)
     name = gets.chomp!
@@ -10,12 +10,12 @@ class Dictionary
   end
 
   def say_hello
-    puts "Привіт #{@name}, приступим..."
+    puts "Hello #{@name}, let's start..."
 
     # timers = Timers::Group.new
     # Timers::Group #after:
     # one_second_timer = timers.after(1) {
-      puts "#{@name} для того щоб вибрати First введіть '1'"
+      puts "#{@name} for chose First enter '1'"
       puts "#{@name} для того щоб вибрати Second введіть '2'"
     # }
     # timers.wait
@@ -42,8 +42,8 @@ class Dictionary
     end
 
     def testing_entering_translation
-      enter = gets.chomp
-      if enter == "1"
+      enter_chose_item = gets.chomp
+      if enter_chose_item == "1"
         hash = []
         File.open("First.txt", "r+") do |file|
           hash = file.readlines
@@ -51,11 +51,11 @@ class Dictionary
         hash.find_all do |el|
           first, *last = el.split(/ - /)
           puts last
-          puts "#{@name} введіть переклад: "
+          puts "#{@name} enter translation: "
           user_word = gets.upcase.chomp
 
           if user_word.upcase == first.upcase
-            puts "Правильно з першої спроби "
+            puts "Wonderfull of first try "
 
           else
             while user_word.upcase != first.upcase do
@@ -93,7 +93,7 @@ class Dictionary
           puts "#{@name} введіть переклад: "
           user_word = gets.chomp
           if user_word.upcase == first.upcase
-            puts "Правильно з першої спроби"
+            puts "Very good, you done this in first chance"
           else
             while user_word.upcase != first.upcase do
               File.open("learn.txt", "w") do |file|
